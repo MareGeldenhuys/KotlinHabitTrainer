@@ -1,9 +1,9 @@
 package web.geldenhuys.kotlinhabittrainer
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,10 +11,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        tv_description.text = "Blah blah water is good for you"
-
-        iv_icon.setImageResource(R.drawable.water)
-        iv_title.text = "Water"
+        habits_recycler.layoutManager = LinearLayoutManager(this)
+        habits_recycler.setHasFixedSize(true)
+        habits_recycler.adapter = HabitsAdapter(getSampleHabits())
     }
 }
