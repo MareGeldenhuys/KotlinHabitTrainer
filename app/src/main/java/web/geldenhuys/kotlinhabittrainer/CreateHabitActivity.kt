@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_create_habit.*
+import web.geldenhuys.kotlinhabittrainer.db.HabitDbTable
 import java.io.IOException
 
 class CreateHabitActivity : AppCompatActivity() {
@@ -77,7 +78,18 @@ class CreateHabitActivity : AppCompatActivity() {
             return
         }
         error_textview.visibility = View.INVISIBLE
-        // Store Habit
+        val title = title_edittext.text.toString()
+        val description = desciption_edittext.text.toString()
+        val habit = Habit(title, description, imageBitmap!!)
+
+        val id = HabitDbTable(this).store(habit)
+
+        if(id == -1L) {
+            displayErrorMessage("Habit could not be stored")
+        } else {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun displayErrorMessage(s: String) {

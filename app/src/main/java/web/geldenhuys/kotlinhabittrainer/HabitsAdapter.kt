@@ -19,7 +19,7 @@ class HabitsAdapter(private val sampleHabits: List<Habit>) : RecyclerView.Adapte
         val habit = sampleHabits[position]
         with (holder.card) {
             tv_description.text = habit.description
-            iv_icon.setImageResource(habit.image)
+            iv_icon.setImageBitmap(habit.image)
             iv_title.text = habit.title
         }
     }
