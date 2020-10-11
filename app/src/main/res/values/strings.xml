@@ -3,4 +3,10 @@
     <string name="card_description">Card Description</string>
     <string name="drink_water">Drink Water</string>
     <string name="refreshing_glass_of_water_gets_you_hydrated">Refreshing glass of water gets you hydrated</string>
+    <string name="begin_habit">Begin with a new Habit…</string>
+    <string name="habit_title">Title</string>
+    <string name="habit_description">Description</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="save_habit">Save Habit</string>
+    <string name="selected_image">Selected Image</string>
 </resources>
